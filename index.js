@@ -19,6 +19,12 @@ app.get('/places/:id', (req, res) => {
     res.send(place);
 })
 
+app.get('/booking/:id', (req, res) => {
+    const id = req.params.id
+    const hotels = places.find(p => parseInt(p.id) == id)
+    res.send(hotels);
+})
+
 app.listen(port, () => {
     console.log(`Travel Guru Resources Running ${port}`)
 })
